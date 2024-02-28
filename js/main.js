@@ -34,15 +34,15 @@ function cartel_final(gastototal){
     }
 }
 
-function pedido_carne(carne) {
+function pedido_carne(carne,precio) {
     do {
-        cantidad = prompt("CANTIDAD DE " + carne + " EN KG: \n Si compra 4kg o Mas se hace un descuento del 10%");
+        cantidad = prompt("CANTIDAD DE " + carne + " EN KG:\n PRECIO POR KG:$ "+precio +"  \n Si compra 4kg o Mas se hace un descuento del 10%");
     } while (cantidad !== null && (isNaN(cantidad) || cantidad <= 0));
     return cantidad;
 }
 
 function pedido_general(carne, precio){
-            cantidad = pedido_carne(carne);
+            cantidad = pedido_carne(carne,precio);
             gastado = calcular_gastado(cantidad,precio);
             cartel(gastado, carne);
             gastototal+=gastado;
