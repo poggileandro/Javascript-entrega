@@ -12,7 +12,7 @@ let cantidad;
 let gastado;
 let gastototal = 0;
 
-function calcular_gastado(cant, precio) {
+const calcular_gastado = (cant, precio) => {
     let canttotal;
     if(cant >= 4 ){
         canttotal = cant * precio;
@@ -23,10 +23,10 @@ function calcular_gastado(cant, precio) {
     return canttotal;
     }    
 }
-function cartel(total, carne) {
+const cartel = (total, carne) => {
     alert("Gastaste: $" + total + " en " + carne);
 }
-function cartel_final(gastototal){
+const cartel_final = (gastototal) =>{
     if(gastototal > 0 ){
         alert("Gracias por su Visita su Gasto TOTAL es de:$ " + gastototal);
     }else{
@@ -34,14 +34,14 @@ function cartel_final(gastototal){
     }
 }
 
-function pedido_carne(carne,precio) {
+const pedido_carne = (carne,precio) => {
     do {
         cantidad = prompt("CANTIDAD DE " + carne + " EN KG:\n PRECIO POR KG:$ "+precio +"  \n Si compra 4kg o Mas se hace un descuento del 10%");
     } while (cantidad !== null && (isNaN(cantidad) || cantidad <= 0));
     return cantidad;
 }
 
-function pedido_general(carne, precio){
+const pedido_general = (carne, precio) =>{
             cantidad = pedido_carne(carne,precio);
             gastado = calcular_gastado(cantidad,precio);
             cartel(gastado, carne);
